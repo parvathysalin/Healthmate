@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+.predictions-container {
+  background: linear-gradient(135deg, #ffffff, #f9fafb);
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  margin: 2rem auto;
+  max-width: 1200px;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+.predictions-container h2 {
+  color: #1e3a8a;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.01em;
+  line-height: 1.3;
+}
+
+.predictions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  justify-content: center;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.prediction-card {
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.prediction-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 4px 16px rgba(59, 130, 246, 0.2);
+}
+
+.prediction-icon {
+  width: 24px;
+  height: 24px;
+  background-image: url('https://via.placeholder.com/24?text=📋');
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+.prediction-card h3 {
+  color: #1e3a8a;
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin: 0;
+  line-height: 1.4;
+  text-align: left;
+}
+
+.prediction-card p {
+  margin: 0.25rem 0;
+  color: #333333;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: left;
+}
+
+.prediction-card p strong {
+  color: #3b82f6;
+}
+
+.status-message {
+  color: #6b7280;
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.status-message.error {
+  color: #ef4444;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+  .predictions-container {
+    padding: 2rem;
+    margin: 1.5rem auto;
+  }
+
+  .predictions-container h2 {
+    font-size: 1.75rem;
+  }
+
+  .predictions-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .predictions-container {
+    padding: 1.5rem;
+    margin: 1rem auto;
+  }
+
+  .predictions-container h2 {
+    font-size: 1.5rem;
+  }
+
+  .prediction-card {
+    padding: 1rem;
+  }
+
+  .prediction-card h3 {
+    font-size: 1rem;
+  }
+
+  .prediction-card p {
+    font-size: 0.75rem;
+  }
+
+  .prediction-icon {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .predictions-container {
+    padding: 1rem;
+  }
+
+  .predictions-container h2 {
+    font-size: 1.25rem;
+  }
+
+  .predictions-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .prediction-card {
+    padding: 0.75rem;
+  }
+
+  .prediction-card h3 {
+    font-size: 0.875rem;
+  }
+}

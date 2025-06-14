@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+.dietplans-container {
+  background: linear-gradient(135deg, #ffffff, #f9fafb);
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  margin: 2rem auto;
+  max-width: 1200px;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+.dietplans-container h2 {
+  color: #1e3a8a;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.01em;
+  line-height: 1.3;
+}
+
+.condition-select {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.condition-select select {
+  width: 100%;
+  max-width: 300px;
+  padding: 0.75rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: #333333;
+  background: #ffffff;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.condition-select select:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  outline: none;
+}
+
+.condition-select select:disabled {
+  background: #f3f4f6;
+  cursor: not-allowed;
+}
+
+.diet-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  justify-content: center;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.diet-list.loading {
+  opacity: 0.5;
+}
+
+.diet-card {
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.diet-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 4px 16px rgba(59, 130, 246, 0.2);
+}
+
+.diet-icon {
+  width: 24px;
+  height: 24px;
+  background-image: url('https://via.placeholder.com/24?text=🍎');
+  background-size: contain;
+  background-repeat: no-repeat;
+  flex-shrink: 0;
+}
+
+.diet-card p {
+  margin: 0;
+  color: #333333;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: left;
+}
+
+.loading-text,
+.no-results {
+  color: #6b7280;
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+  .dietplans-container {
+    padding: 2rem;
+    margin: 1.5rem auto;
+  }
+
+  .dietplans-container h2 {
+    font-size: 1.75rem;
+  }
+
+  .diet-list {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .dietplans-container {
+    padding: 1.5rem;
+    margin: 1rem auto;
+  }
+
+  .dietplans-container h2 {
+    font-size: 1.5rem;
+  }
+
+  .condition-select select {
+    max-width: 250px;
+    font-size: 0.875rem;
+    padding: 0.5rem 0.75rem;
+  }
+
+  .diet-card {
+    padding: 1rem;
+  }
+
+  .diet-card p {
+    font-size: 0.75rem;
+  }
+
+  .diet-icon {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .dietplans-container {
+    padding: 1rem;
+  }
+
+  .dietplans-container h2 {
+    font-size: 1.25rem;
+  }
+
+  .condition-select select {
+    max-width: 200px;
+    font-size: 0.75rem;
+  }
+
+  .diet-list {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .diet-card {
+    padding: 0.75rem;
+  }
+
+  .diet-card p {
+    font-size: 0.75rem;
+  }
+}
